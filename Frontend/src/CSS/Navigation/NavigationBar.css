@@ -1,0 +1,157 @@
+/* Navbar Container */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: var(--bg-color-100);
+  color: var(--text-color);
+  border-bottom: 2px solid var(--text-color-nav);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.035);
+}
+
+.navbar-left, .navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left {
+  flex: 1;
+  gap: 15px;
+}
+
+.navbar-logo .logo {
+  height: 40px;
+  width: auto;
+  cursor: pointer;
+}
+
+/* Centered Nav Links */
+.navbar-center {
+  padding-top: 0.8em;
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-links li .nav-link {
+  text-decoration: none;
+  color: var(--text-color-nav);
+  font-size: 1.25rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Sliding border bottom effect for links */
+.navbar-links li .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: red;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar-links li .nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-search {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+/* Right Icons */
+.navbar-right {
+  padding-top: 0.8em;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.nav-icon {
+  padding-inline: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  text-decoration: none;
+  color: var(--text-color-nav);
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Sliding border bottom effect for icons */
+.nav-icon::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: red;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-icon:hover::after {
+  width: 100%;
+}
+
+.icon-text {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.hamburger-icon {
+  padding-top: 0.8em;
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1155px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .hamburger-icon {
+    display: block;
+  }
+}
+
+@media (max-width: 900px) 
+{
+  .navbar-search {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) 
+{
+  .icon-text {
+    display: none;
+  }
+
+  .nav-icon{
+    padding-inline: 10px;
+  }
+}
+
+@media (max-width: 405px) 
+{
+  .account-container {
+    display: none;
+  }
+}

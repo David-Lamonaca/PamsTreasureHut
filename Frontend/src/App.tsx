@@ -1,7 +1,7 @@
 import React from "react";
 import AppRoutes from './Components/AppRoutes'
 import './CSS/App.css'
-import NavigationBar from "./Components/NavigationBar";
+import NavigationBar from "./Components/Navigation/NavigationBar";
 import Footer from "./Components/Footer";
 
 const App: React.FC = () => 

@@ -1,0 +1,71 @@
+.account-dropdown {
+    position: absolute;
+    top: calc(100% + 20px); 
+    left: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    z-index: 1050; 
+    width: 200px;
+    visibility: hidden;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.account-dropdown.right-align {
+    left: auto;
+    right: 0;
+}
+
+.account-caret {
+    position: absolute;
+    top: -10px; 
+    left: 20px; 
+    width: 0;
+    height: 0px;
+    border-left: 10px solid transparent; 
+    border-right: 10px solid transparent; 
+    border-bottom: 10px solid black; 
+    z-index: 1051; 
+}
+
+.account-caret.right-align-caret {
+    left: auto;
+    right: 20px; 
+}
+
+.modal-menu {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.modal-menu li {
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.modal-menu li a {
+    text-decoration: none;
+    color: var(--text-color-nav);
+    font-size: larger;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    width: 100%;
+}
+
+.modal-menu li:hover {
+    background-color: #f0f0f0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

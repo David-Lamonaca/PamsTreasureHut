@@ -1,0 +1,45 @@
+/* Search Bar Container */
+.search-bar {
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+    padding: 0px 5px;
+    width: 80%;
+    border-radius: 0.2em;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-bar:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
+
+/* Input Field */
+.search-input {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: none !important; 
+    outline: none !important; 
+}
+
+/* Targets the .search-bar container when the .search-input inside it receives focus. */
+.search-input:focus ~ .search-bar,
+.search-bar:focus-within {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Search Button */
+.search-button {
+    background-color: #e60012; /* Red background */
+    color: #fff; /* White icon */
+    border-radius: 5px; /* Remove border radius for flush design */
+    transition: background-color 0.3s ease;
+    background-color: red;
+    padding: 1px;
+}
+
+.search-button:hover {
+    background-color: #cc000f; /* Slightly darker red on hover */
+}
