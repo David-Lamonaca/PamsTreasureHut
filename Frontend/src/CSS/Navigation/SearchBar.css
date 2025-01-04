@@ -11,8 +11,9 @@
     transition: box-shadow 0.3s ease;
 }
 
-.search-bar:hover {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+.search-bar:hover,
+.search-bar:focus-within {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Input Field */
@@ -40,6 +41,7 @@
     padding: 1px;
 }
 
-.search-button:hover {
-    background-color: #cc000f; /* Slightly darker red on hover */
+.search-button:hover,
+.search-button:focus {
+    background-color: #cc000f;
 }

@@ -10,21 +10,23 @@ const SearchBar: React.FC = () => {
     };
 
     return (
-        <div className="search-bar" >
+        <div className="search-bar" role="search">
             <input
                 className="search-input"
                 placeholder="Search for Products"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
+                aria-label="Search input"
+                tabIndex={0}
             />
-            <div
-                
+            <button
                 className="search-button"
-                aria-label="search"
+                aria-label="Search button"
                 onClick={handleSearch}
+                tabIndex={0}
             >
                 <SearchIcon />
-            </div>
+            </button>
         </div>
     );
 };

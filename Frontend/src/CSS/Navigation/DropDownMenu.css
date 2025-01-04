@@ -1,47 +1,77 @@
-.menu {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    background-color: #3a87ad;
-  }
-  
-  .menu-item {
-    position: relative;
-  }
-  
-  .menu-item a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    display: block;
-    background-color: #3a87ad;
-  }
-  
-  .menu-item:hover > a {
-    background-color: #2d6b8c;
-  }
-  
-  .submenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    list-style-type: none;
-    background-color: #2d6b8c;
-    padding: 0;
-    margin: 0;
-    display: none;
-  }
-  
-  .menu-item.has-children:hover > .submenu {
-    display: block;
-  }
-  
-  .submenu .menu-item a {
-    padding: 10px;
-  }
-  
-  .submenu .menu-item:hover > a {
-    background-color: #1c4a63;
-  }
-  
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 20px); /* Adjusted spacing */
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 0;
+  margin: 0;
+  min-width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dropdown-item {
+  text-decoration: none !important;
+  position: relative;
+}
+
+.dropdown-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-link:hover,
+.dropdown-link:focus {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.dropdown-link-text,
+.dropdown-item-text{
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown-link-text:hover,
+.dropdown-link-text:focus {
+    text-decoration: underline;
+    color: cadetblue;
+}
+
+.arrow-right {
+  margin-left: auto;
+  font-size: 12px;
+}
+
+/* Nested Dropdown Positioning */
+.dropdown-item > .dropdown-menu {
+  top: 0; /* Aligns with parent */
+  left: calc(100%); /* Positions submenu next to parent */
+}
+
+/* Remove Default Circle Around Arrows */
+.arrow-right, .arrow-down {
+  display: inline; /* Inline to avoid block effects */
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+/* Remove default list styling */
+.dropdown-menu,
+.dropdown-item {
+  list-style: none; /* Removes bullets */
+  padding: 0;
+  margin: 0;
+}

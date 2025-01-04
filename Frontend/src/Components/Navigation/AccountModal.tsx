@@ -2,19 +2,16 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import '../../CSS/Navigation/AccountModal.css';
 
-interface AccountModalProps 
-{
+interface AccountModalProps {
     anchorRef: React.RefObject<HTMLDivElement>;
 }
 
-const AccountModal: React.FC<AccountModalProps> = ({ anchorRef }) => 
-{
+const AccountModal: React.FC<AccountModalProps> = ({ anchorRef }) => {
     const [isRightAligned, setRightAligned] = useState(false);
     const [isVisible, setVisible] = useState(false);
     const modalRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => 
-    {
+    useEffect(() => {
         if (anchorRef.current && modalRef.current) {
             const anchorRect = anchorRef.current.getBoundingClientRect();
             const modalWidth = modalRef.current.offsetWidth;
@@ -26,8 +23,6 @@ const AccountModal: React.FC<AccountModalProps> = ({ anchorRef }) =>
             setVisible(true);
         }
 
-        // Prevent body scrollbars from appearing temporarily
-        //document.body.style.overflow = 'hidden';
         return () => {
             document.body.style.overflow = '';
         };
@@ -39,22 +34,29 @@ const AccountModal: React.FC<AccountModalProps> = ({ anchorRef }) =>
             className={`account-dropdown ${isRightAligned ? 'right-align' : ''}`}
             style={{ visibility: isVisible ? 'visible' : 'hidden' }}
             onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-label="Account Options"
+            aria-modal="true"
+            tabIndex={-1}
         >
-            <div className={`account-caret ${isRightAligned ? 'right-align-caret' : ''}`} />
-            <ul className="modal-menu">
-                <li>
-                    <Link to="/profile">
+            <div 
+                className={`account-caret ${isRightAligned ? 'right-align-caret' : ''}`} 
+                aria-hidden="true"
+            />
+            <ul className="modal-menu" role="menu">
+                <li role="menuitem" tabIndex={0}>
+                    <Link to="/profile" aria-label="View Profile">
                         Profile
                     </Link>
                 </li>
-                <li>
-                    <Link to="/profile">
-                        Profile
+                <li role="menuitem" tabIndex={0}>
+                    <Link to="/orders" aria-label="View Orders">
+                        Orders
                     </Link>
                 </li>
-                <li>
-                    <Link to="/profile">
-                        Profile
+                <li role="menuitem" tabIndex={0}>
+                    <Link to="/settings" aria-label="Account Settings">
+                        Settings
                     </Link>
                 </li>
             </ul>

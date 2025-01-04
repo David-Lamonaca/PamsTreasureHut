@@ -55,7 +55,8 @@
     width: 100%;
 }
 
-.modal-menu li:hover {
+.modal-menu li:hover,
+.modal-menu li:focus {
     background-color: #f0f0f0;
 }
 

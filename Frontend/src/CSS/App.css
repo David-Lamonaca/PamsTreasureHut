@@ -1,3 +1,25 @@
+:root 
+{
+  --bg-color-900: #f2f2fc;
+  --bg-color-100: #fdf9ff;
+  --bg-color-50: #e8dfec;
+  --txt-color-900: #302e4d;
+  --txt-color-700: #504e70;
+  --primary-color: blue;
+  --accent-color: yellow;
+}
+
+[data-theme='dark'] 
+{
+  --bg-color-900: #151515;
+  --bg-color-100: #222222;
+  --bg-color-50: #393939;
+  --txt-color-900: #ffffff;
+  --txt-color-700: #e9e9e9;
+  --primary-color: purple;
+  --accent-color: orange;
+}
+
 body{
   margin: 0;
   padding: 0;
